@@ -1,0 +1,22 @@
+{
+  "name": "voting-app-backend",
+  "version": "1.0.0",
+  "description": "Backend API for the voting application",
+  "main": "server/index.ts",
+  "scripts": {
+    "dev": "deno run --allow-net --allow-env --allow-read --watch server/index.ts",
+    "start": "deno run --allow-net --allow-env --allow-read server/index.ts",
+    "build": "echo 'No build step required for Deno'",
+    "test": "echo 'No tests yet'"
+  },
+  "dependencies": {
+    "hono": "^4.0.0",
+    "@supabase/supabase-js": "^2.49.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0"
+  },
+  "keywords": ["voting", "api", "backend", "hono", "supabase"],
+  "author": "Innocent Chikwanda",
+  "license": "MIT"
+}
