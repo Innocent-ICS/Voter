@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "lib": ["deno.window"],
+    "strict": true
+  },
+  "imports": {
+    "hono": "https://deno.land/x/hono@v4.0.0/mod.ts",
+    "hono/cors": "https://deno.land/x/hono@v4.0.0/middleware/cors/index.ts",
+    "hono/logger": "https://deno.land/x/hono@v4.0.0/middleware/logger/index.ts",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.49.8"
+  }
+}
