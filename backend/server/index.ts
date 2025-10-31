@@ -176,7 +176,10 @@ app.post("/make-server-02adf113/send-registration-link", async (c) => {
     });
 
     // Create registration link
-    const origin = c.req.header('origin') || c.req.header('referer')?.split('/').slice(0, 3).join('/') || 'http://localhost:3001';
+    const origin = c.req.header('origin') || 
+                   c.req.header('referer')?.split('/').slice(0, 3).join('/') || 
+                   Deno.env.get('FRONTEND_URL') || 
+                   'http://localhost:3001';
     const registrationLink = `${origin}?regToken=${registrationToken}`;
 
     // Send email with registration link
@@ -348,7 +351,10 @@ app.post("/make-server-02adf113/send-vote-link", async (c) => {
     });
 
     // Create voting link
-    const origin = c.req.header('origin') || c.req.header('referer')?.split('/').slice(0, 3).join('/') || 'http://localhost:3001';
+    const origin = c.req.header('origin') || 
+                   c.req.header('referer')?.split('/').slice(0, 3).join('/') || 
+                   Deno.env.get('FRONTEND_URL') || 
+                   'http://localhost:3001';
     const votingLink = `${origin}?token=${votingToken}`;
 
     // Send email with voting link
