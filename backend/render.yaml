@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: voting-app-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: NODE_ENV
+        value: production
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+    healthCheckPath: /make-server-02adf113/health
+    autoDeploy: true

@@ -562,4 +562,15 @@ app.get("/make-server-02adf113/results", async (c) => {
   }
 });
 
-Deno.serve(app.fetch);
+// Get port from environment variable or default to 8000
+const port = parseInt(Deno.env.get("PORT") || "8000");
+
+console.log(`🚀 Server starting on port ${port}...`);
+
+Deno.serve({
+  port: port,
+  hostname: "0.0.0.0",
+  onListen: ({ port, hostname }) => {
+    console.log(`✅ Server running on http://${hostname}:${port}`);
+  },
+}, app.fetch);
