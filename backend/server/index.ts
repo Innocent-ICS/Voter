@@ -224,7 +224,7 @@ app.post("/make-server-02adf113/send-registration-link", async (c) => {
       return c.json({
         success: true,
         message: "Registration link sent to your email",
-        // For testing, also return the link directly
+        registrationLink: registrationLink,
         testLink: registrationLink
       });
     } else {
@@ -407,7 +407,7 @@ app.post("/make-server-02adf113/send-vote-link", async (c) => {
       return c.json({
         success: true,
         message: "Voting link sent to your email",
-        // For testing, also return the link directly
+        votingLink: votingLink,
         testLink: votingLink
       });
     } else {
