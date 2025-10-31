@@ -1,6 +1,9 @@
 import { projectId, publicAnonKey } from "./supabase/info";
 
-const API_BASE_URL = `https://${projectId}.supabase.co/functions/v1/make-server-02adf113`;
+// Use local backend in development, Render backend in production
+const API_BASE_URL = import.meta.env.DEV 
+  ? 'http://localhost:8000/make-server-02adf113'
+  : 'https://voter-ul2k.onrender.com/make-server-02adf113';
 
 export async function apiCall(endpoint: string, options: RequestInit = {}) {
   const url = `${API_BASE_URL}${endpoint}`;
